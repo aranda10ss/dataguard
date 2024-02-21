@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This lightweight package simplifies data validation, helping you catch errors and inconsistencies with minimal code.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "lint": "pnpm dlx @biomejs/biome lint .",
     "format": "pnpm dlx @biomejs/biome format . --write",
