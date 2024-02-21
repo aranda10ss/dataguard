@@ -15,6 +15,7 @@ import {
   isI16,
   isI32
 } from './validators/numbers.js'
+import { isEmail } from './validators/emails.js'
 
 export {
   isString,
@@ -29,5 +30,6 @@ export {
   isU32,
   isI8,
   isI16,
-  isI32
+  isI32,
+  isEmail
 }
