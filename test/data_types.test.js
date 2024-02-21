@@ -1,12 +1,13 @@
 import {
   isString,
-  isNumber,
   isBoolean,
   isFunction,
+  isUndefined,
+  isNull,
   isArray
 } from '../src/index.js'
 
-describe('Validators', () => {
+describe('Validators data_types', () => {
   describe('isString', () => {
     it('should return true for strings', () => {
       expect(isString('hello')).toBe(true)
@@ -18,21 +19,8 @@ describe('Validators', () => {
       expect(isString([])).toBe(false)
       expect(isString({})).toBe(false)
       expect(isString(() => {})).toBe(false)
-    })
-  })
-
-  describe('isNumber', () => {
-    it('should return true for numbers', () => {
-      expect(isNumber(42)).toBe(true)
-      expect(isNumber(3.14)).toBe(true)
-    })
-
-    it('should return false for non-numbers', () => {
-      expect(isNumber('abc')).toBe(false)
-      expect(isNumber(true)).toBe(false)
-      expect(isNumber([])).toBe(false)
-      expect(isNumber({})).toBe(false)
-      expect(isNumber(() => {})).toBe(false)
+      expect(isString(undefined)).toBe(false)
+      expect(isString(null)).toBe(false)
     })
   })
 
@@ -48,6 +36,8 @@ describe('Validators', () => {
       expect(isBoolean([])).toBe(false)
       expect(isBoolean({})).toBe(false)
       expect(isBoolean(() => {})).toBe(false)
+      expect(isBoolean(undefined)).toBe(false)
+      expect(isBoolean(null)).toBe(false)
     })
   })
 
@@ -59,8 +49,43 @@ describe('Validators', () => {
     it('should return false for non-functions', () => {
       expect(isFunction('abc')).toBe(false)
       expect(isFunction(123)).toBe(false)
+      expect(isFunction(true)).toBe(false)
       expect(isFunction([])).toBe(false)
       expect(isFunction({})).toBe(false)
+      expect(isString(undefined)).toBe(false)
+      expect(isString(null)).toBe(false)
+    })
+  })
+
+  describe('isUndefined', () => {
+    it('should return true for undefineds', () => {
+      expect(isUndefined(undefined)).toBe(true)
+    })
+
+    it('should return false for non-undefineds', () => {
+      expect(isUndefined('abc')).toBe(false)
+      expect(isUndefined(123)).toBe(false)
+      expect(isUndefined(true)).toBe(false)
+      expect(isUndefined([])).toBe(false)
+      expect(isUndefined({})).toBe(false)
+      expect(isUndefined(() => {})).toBe(false)
+      expect(isUndefined(null)).toBe(false)
+    })
+  })
+
+  describe('isNull', () => {
+    it('should return true for nulls', () => {
+      expect(isNull(null)).toBe(true)
+    })
+
+    it('should return false for non-nulls', () => {
+      expect(isNull('abc')).toBe(false)
+      expect(isNull(123)).toBe(false)
+      expect(isNull(true)).toBe(false)
+      expect(isNull([])).toBe(false)
+      expect(isNull({})).toBe(false)
+      expect(isNull(() => {})).toBe(false)
+      expect(isNull(undefined)).toBe(false)
     })
   })
 
@@ -75,6 +100,8 @@ describe('Validators', () => {
       expect(isArray(true)).toBe(false)
       expect(isArray({})).toBe(false)
       expect(isArray(() => {})).toBe(false)
+      expect(isArray(undefined)).toBe(false)
+      expect(isArray(null)).toBe(false)
     })
   })
 })
