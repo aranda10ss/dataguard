@@ -4,9 +4,7 @@
   "description": "This lightweight package simplifies data validation, helping you catch errors and inconsistencies with minimal code.",
   "main": "index.js",
   "type": "module",
-  "repository": {
-    "url": "https://github.com/aranda10ss/dataguard"
-  },
+  "repository":"https://github.com/aranda10ss/dataguard.git",
   "publishConfig": {
     "access": "public",
     "registry":"https://npm.pkg.github.com"
