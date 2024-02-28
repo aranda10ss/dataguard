@@ -1,9 +1,16 @@
 {
-  "name": "dataguard",
+  "name": "@aranda10ss/dataguard",
   "version": "1.0.0",
   "description": "This lightweight package simplifies data validation, helping you catch errors and inconsistencies with minimal code.",
   "main": "index.js",
   "type": "module",
+  "repository": {
+    "url": "https://github.com/aranda10ss/dataguard"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry":"https://npm.pkg.github.com"
+  },
   "scripts": {
     "lint": "pnpm dlx @biomejs/biome lint .",
     "format": "pnpm dlx @biomejs/biome format . --write",
